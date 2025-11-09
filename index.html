@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeScore Premium | Website Price Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/Logo!.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo">
+                <h1><i class="fas fa-crown"></i> CodeScore <span class="premium-badge">Premium</span></h1>
+            </div>
+            <nav class="main-nav">
+                <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-list" id="nav-list">
+                    <li><a href="#" class="active"><i class="fas fa-calculator"></i> Calculator</a></li>
+                    <li><a href="#"><i class="fas fa-tag"></i> Pricing</a></li>
+                    <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li class="theme-toggle-container">
+                        <div class="theme-toggle">
+                            <input type="checkbox" id="theme-toggle" class="theme-checkbox">
+                            <label for="theme-toggle" class="theme-label">
+                                <i class="fas fa-sun"></i>
+                                <i class="fas fa-moon"></i>
+                                <span class="theme-ball"></span>
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <button class="btn-premium"><i class="fas fa-gem"></i> Upgrade</button>
+                <button class="btn-primary">Sign Up</button>
+                <button class="btn-secondary">Login</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <header class="page-header">
+            <h1>Website Price Calculator</h1>
+            <p>Calculate the cost of a website based on HTML, CSS, and JavaScript code</p>
+            <div class="premium-features">
+                <span class="premium-feature"><i class="fas fa-bolt"></i> Advanced Analysis</span>
+                <span class="premium-feature"><i class="fas fa-chart-line"></i> Detailed Reports</span>
+                <span class="premium-feature"><i class="fas fa-lock"></i> Secure Calculation</span>
+            </div>
+        </header>
+
+        <div class="calculator">
+            <div class="code-panel">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="html"><i class="fab fa-html5"></i> HTML</button>
+                    <button class="tab-btn" data-tab="css"><i class="fab fa-css3-alt"></i> CSS</button>
+                    <button class="tab-btn" data-tab="js"><i class="fab fa-js-square"></i> JavaScript</button>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="html-tab">
+                        <div class="code-header">
+                            <h3>HTML Code</h3>
+                            <button class="btn-code-action"><i class="fas fa-magic"></i> Format</button>
+                        </div>
+                        <textarea id="html-code" placeholder="Paste your HTML code here..."></textarea>
+                    </div>
+                    <div class="tab-pane" id="css-tab">
+                        <div class="code-header">
+                            <h3>CSS Code</h3>
+                            <button class="btn-code-action"><i class="fas fa-magic"></i> Format</button>
+                        </div>
+                        <textarea id="css-code" placeholder="Paste your CSS code here..."></textarea>
+                    </div>
+                    <div class="tab-pane" id="js-tab">
+                        <div class="code-header">
+                            <h3>JavaScript Code</h3>
+                            <button class="btn-code-action"><i class="fas fa-magic"></i> Format</button>
+                        </div>
+                        <textarea id="js-code" placeholder="Paste your JavaScript code here..."></textarea>
+                    </div>
+                </div>
+                <div class="code-info">
+                    <div class="info-item">Lines: <span id="html-lines">0</span></div>
+                    <div class="info-item">Characters: <span id="html-chars">0</span></div>
+                    <div class="info-item">Complexity: <span id="complexity">Low</span></div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="control-buttons">
+                    <button id="calculate-btn">
+                        <span class="btn-text"><i class="fas fa-calculator"></i> Calculate Price</span>
+                        <div class="loading-spinner" id="loading-spinner">
+                            <div class="spinner"></div>
+                        </div>
+                    </button>
+                    <button id="refresh-btn"><i class="fas fa-sync-alt"></i> Refresh</button>
+                    <button class="btn-premium"><i class="fas fa-download"></i> Export Report</button>
+                </div>
+                <div class="price-display">
+                    <span class="price-label">Estimated Price:</span>
+                    <span class="price-amount" id="total-price">$0.00</span>
+                    <div class="price-subtext">Including all features</div>
+                </div>
+            </div>
+
+            <div class="results-section">
+                <h2><i class="fas fa-chart-pie"></i> Price Breakdown</h2>
+                <div class="price-breakdown">
+                    <div class="breakdown-item">
+                        <div class="breakdown-info">
+                            <span class="breakdown-label">HTML (<span id="html-lines-count">0</span> lines)</span>
+                            <span class="breakdown-detail">Html Reader</span>
+                        </div>
+                        <span class="breakdown-cost" id="html-cost">$0.00</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-info">
+                            <span class="breakdown-label">CSS (<span id="css-lines-count">0</span> lines)</span>
+                            <span class="breakdown-detail">Css Reader</span>
+                        </div>
+                        <span class="breakdown-cost" id="css-cost">$0.00</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-info">
+                            <span class="breakdown-label">JavaScript (<span id="js-lines-count">0</span> lines)</span>
+                            <span class="breakdown-detail">Js Reader</span>
+                        </div>
+                        <span class="breakdown-cost" id="js-cost">$0.00</span>
+                    </div>
+                </div>
+                <div class="additional-info">
+                    <div class="info-card">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Estimated Time</h3>
+                            <p id="estimated-time">0-2 hours</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-layer-group"></i>
+                        <div>
+                            <h3>Complexity Level</h3>
+                            <p id="complexity-level">Low</p>
+                        </div>
+                    </div>
+                    <div class="info-card premium-card">
+                        <i class="fas fa-gem"></i>
+                        <div>
+                            <h3>Premium Analysis</h3>
+                            <p>Detailed report available</p>
+                            <button class="btn-premium-sm">View</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-crown"></i> CodeScore Premium</h3>
+                <p>Accurately estimate website development costs based on code complexity with our premium tools.</p>
+                <div class="subscribe-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button class="btn-premium">Subscribe</button>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#"><i class="fas fa-calculator"></i> Calculator</a></li>
+                    <li><a href="#"><i class="fas fa-tag"></i> Pricing Guide</a></li>
+                    <li><a href="#"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#"><i class="fas fa-code"></i> Web Development</a></li>
+                    <li><a href="#"><i class="fas fa-book"></i> Code Standards</a></li>
+                    <li><a href="#"><i class="fas fa-blog"></i> Blog</a></li>
+                    <li><a href="#"><i class="fas fa-headset"></i> Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> info@codescore.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 CodeScore Premium. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
